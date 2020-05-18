@@ -6,22 +6,14 @@ self.left (the left child of the node)
 self.right (the right child of the node)
 self.info (the value of the node)
 """
-
-def levelOrder_util(root, q):
-    if(not root):
-        return
-    if(root.info not in q):
-        q.append(root.info)
-    if(root.left):
-        q.append(root.left.info)
-    if(root.right):
-        q.append(root.right.info)
-    levelOrder_util(root.left, q)
-    levelOrder_util(root.right, q)
-
 def levelOrder(root):
-    q = []
-    levelOrder_util(root, q)
-    for i in q:
-        print(i, end = ' ')
-    
+    #Write your code here
+    thislevel = [root]
+    while thislevel:
+        nextlevel = list()
+        for each in thislevel:
+            if each:
+                print(each.info, end=' ')
+                nextlevel.append(each.left)
+                nextlevel.append(each.right)
+        thislevel = nextlevel
