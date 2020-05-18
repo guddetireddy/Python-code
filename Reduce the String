@@ -1,0 +1,23 @@
+def getReducedString(s):
+    l = list(s)
+    while 1:
+        count = 0
+        i = 1
+        while i < len(l):
+            if l[i] == l[i-1] and l[i] != '':
+                del l[i]
+                del l[i-1]
+                count += 1
+            i += 1
+        if count == 0:  # no further change
+            break
+    return ''.join(l)
+
+
+if __name__ == '__main__':
+    s = input().strip()
+    s = getSuperReducedString(s)
+    if s:
+        print(s)
+    else:
+        print('Empty String')
