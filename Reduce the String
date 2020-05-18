@@ -1,4 +1,4 @@
-def getReducedString(s):
+def getsuperReducedString(s):
     l = list(s)
     while 1:
         count = 0
@@ -16,7 +16,7 @@ def getReducedString(s):
 
 if __name__ == '__main__':
     s = input().strip()
-    s = getSuperReducedString(s)
+    s = getsuperReducedString(s)
     if s:
         print(s)
     else:
