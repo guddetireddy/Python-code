@@ -9,7 +9,7 @@ def getsuperReducedString(s):
                 del l[i-1]
                 count += 1
             i += 1
-        if count == 0: 
+        if count == 0:  # no further change
             break
     return ''.join(l)
 
